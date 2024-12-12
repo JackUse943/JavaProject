@@ -24,8 +24,10 @@
 					<td>${emp.empDepartment}</td>
 					<td><a href="edit?no=${emp.empId}"><img
 							src="images/edit.png" width="30" height="20"> </a></td>
-					<td><a href="delete?no=${emp.empId}"><img
-							src="images/delete.png" width="20" height="20"> </a></td>
+					<td><a onclick="return confirm('Are you sure to delete?')" href="delete?no=${emp.empId}"> <img src="images/delete.png"
+							width="20" height="20">
+					</a></td>
+
 				</tr>
 			</c:forEach>
 		</table>
@@ -39,4 +41,5 @@
 	height="100" style="border: 1px solid black; border-radius: 10px;" />
 </a>
 <h1>${message}</h1>
-<a href="./"><img src="images/home.png" width="50" height="50"> </a>
+<a href="./"><img src="images/home.png" width="50" height="50">
+</a>
