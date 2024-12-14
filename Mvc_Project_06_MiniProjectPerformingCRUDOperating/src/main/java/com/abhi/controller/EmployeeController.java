@@ -25,7 +25,7 @@ public class EmployeeController {
 	}
 
 	@GetMapping("/report")
-	public String getReport(Map<String, Object> map) {
+	public String getReport(Map<String, Object> map, @ModelAttribute Employee employee) {
 		try {
 			List<Employee> reportList = employeeService.showReport();
 			map.put("reportList", reportList);
@@ -85,4 +85,22 @@ public class EmployeeController {
 		}
 
 	}
+
+	@PostMapping("/search")
+	public String searchRecourd(@ModelAttribute Employee employee, Map<String, Object> map) {
+		try {
+
+			List<Employee> searchEmployeeReportWithDyanmicSearch = employeeService
+					.searchEmployeeReportWithDyanmicSearch(employee);
+			map.put("reportList", searchEmployeeReportWithDyanmicSearch);
+
+			return "showReport";
+
+		} catch (Exception e) {
+			map.put("msg", e.getMessage());
+			return "showReport";
+		}
+
+	}
+
 }

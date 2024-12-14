@@ -13,5 +13,7 @@ public interface IEmployeeService {
 	public String updateEmployeeRecord(Employee employee);
 
 	public String deleteById(int id);
+	
+	public List<Employee> searchEmployeeReportWithDyanmicSearch(Employee employee);
 
 }

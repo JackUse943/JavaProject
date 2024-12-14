@@ -5,11 +5,7 @@
 
 <frm:form modelAttribute="employee">
     <table align="center" border="1">
-     <tr>
-            <td>Employee Name</td>
-            <td><frm:input path="empId" readonly="true"/></td>
-        </tr>
-        <tr>
+             <tr>
             <td>Employee Name</td>
             <td><frm:input path="empName"/></td>
         </tr>
